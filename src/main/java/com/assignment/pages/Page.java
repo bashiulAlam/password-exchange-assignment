@@ -1,9 +1,13 @@
 package com.assignment.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public abstract class Page {
 	WebDriver driver;
@@ -11,7 +15,7 @@ public abstract class Page {
 
 	public Page(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(this.driver, 15);
+		this.wait = new WebDriverWait(this.driver, Duration.ofMillis(30000));
 	}
 
 	// Abstract Methods

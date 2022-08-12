@@ -4,11 +4,11 @@
 <suite name="Assignment" thread-count="1"
        parallel="tests" verbose="1">
 
-    <test name="E-Commerce Test - chrome" parallel="methods"
+    <test name="Automation Test - chrome" parallel="methods"
           thread-count="1">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.assignment.tests.ECommerceTest"/>
+            <class name="com.assignment.tests.ListTest"/>
         </classes>
     </test>
 

@@ -38,18 +38,13 @@ public class BaseTest {
 	@Parameters(value= {"browser"})
 	public void setupTest(String browser) {
 		if(browser.equals("chrome")) {
-			/*DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("incognito");
-			desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);*/
-
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 2);
 			ChromeOptions options = new ChromeOptions();
 			options.setExperimentalOption("prefs", prefs);
 			options.addArguments("--disable-dev-shm-usage"); 
 			options.addArguments("--no-sandbox");
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(options);
@@ -57,9 +52,6 @@ public class BaseTest {
 		} else {
 			System.out.println("Browser is not defined in xml");
 		}
-		
-//		driver.manage().deleteAllCookies();
-//		driver.manage().window().maximize();
 
 		// Default value 0 Seconds implicit timeout
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -68,13 +60,6 @@ public class BaseTest {
 		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 
 		driver.get(this.url);
-		
-		
-//		try {
-//			Thread.sleep(6000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
 
 		System.out.println("URL: " + this.url);
 

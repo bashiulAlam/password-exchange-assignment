@@ -8,17 +8,17 @@ public class ConfigPropertiesUtil {
     public static String USER;
     public static String PASSWORD;
 
-    //e-commerce variables
-    public static String E_COMMERCE_URL;
+    //url variable
+    public static String PRODUCTS_UP_URL;
 
     public interface ConfigElements {
         //user elements
-        static final String USER_EMAIL = "USER_EMAIL";
-        static final String USER = "USER";
-        static final String PASSWORD = "PASSWORD";
+        String USER_EMAIL = "USER_EMAIL";
+        String USER = "USER";
+        String PASSWORD = "PASSWORD";
 
-        //e-commerce elements
-        static final String E_COMMERCE_URL = "E_COMMERCE_URL";
+        //url element
+        String PRODUCTS_UP_URL = "PRODUCTS_UP_URL";
     }
 
     static {
@@ -30,7 +30,7 @@ public class ConfigPropertiesUtil {
         USER = configProperties.getProperty(ConfigElements.USER);
         PASSWORD = configProperties.getProperty(ConfigElements.PASSWORD);
 
-        //assign e-commerce variables
-        E_COMMERCE_URL = configProperties.getProperty(ConfigElements.E_COMMERCE_URL);
+        //assign url variable
+        PRODUCTS_UP_URL = configProperties.getProperty(ConfigElements.PRODUCTS_UP_URL);
     }
 }

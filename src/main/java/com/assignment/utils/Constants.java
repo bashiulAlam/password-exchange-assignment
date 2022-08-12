@@ -1,11 +1,12 @@
 package com.assignment.utils;
 
 public class Constants {
-    public static final String E_COMMERCE_URL = ConfigPropertiesUtil.E_COMMERCE_URL;
+    public static final String PRODUCTS_UP_URL = ConfigPropertiesUtil.PRODUCTS_UP_URL;
 
     public static final String USER_EMAIL = ConfigPropertiesUtil.USER_EMAIL;
     public static final String USER = ConfigPropertiesUtil.USER;
     public static final String PASSWORD = ConfigPropertiesUtil.PASSWORD;
+    public static String LIST_NAME = "";
 
     public static class UITitles {
     }

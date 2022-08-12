@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Automation Test - chrome"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="65.312">
+    <properties></properties>
+
+
+
+            <testcase
+                name="Test_005_openDataViewUI"
+                time="31.600"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_003_openListUI"
+                time="17.782"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_004_addNewList"
+                time="4.615"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_001_signIn"
+                time="4.527"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_002_openDashboard"
+                time="6.788"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+</testsuite>
