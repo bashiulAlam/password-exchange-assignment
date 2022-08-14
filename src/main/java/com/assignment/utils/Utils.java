@@ -11,10 +11,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Utils {
-    public static void takeScreenShot(WebDriver driver) throws IOException {
+    public static void takeScreenShot(WebDriver driver, String fileName) throws IOException {
         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String time = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss-aa").format(new Date());
-        String fileWithPath = "./screenshots/" + time + ".png";
+        String fileWithPath = "./screenshots/" + fileName + "-" + time + ".png";
         File destinationFile = new File(fileWithPath);
         FileUtils.copyFile(screenshotFile, destinationFile);
     }

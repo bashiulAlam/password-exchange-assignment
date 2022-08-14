@@ -9,8 +9,11 @@ public class Constants {
     public static String LIST_NAME = "";
 
     public static class UITitles {
+        public static final String DASHBOARD_TITLE = "Dashboard";
+        public static final String LIST_UI_TITLE = "Lists";
+        public static final String DATA_VIEW_UI_TITLE = "Data View";
     }
 
-    public static final String ADD_TO_CART_SUCCESS_MESSAGE = "Product successfully added to your shopping cart";
-    public static final String ORDER_SUCCESSFUL_MESSAGE = "Your order on My Store is complete.";
+    public static final String LIST_ADD_SUCCESS_MESSAGE = "You successfully added the list item";
+    public static final String BLACKLIST_BACKGROUND_COLOR = "rgba(254, 199, 195, 0.6)";
 }

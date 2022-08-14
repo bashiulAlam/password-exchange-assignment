@@ -1,6 +1,5 @@
 package com.assignment.utils;
 
-import org.junit.Assert;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -31,7 +30,7 @@ public class Configuration {
             properties.load(inputStream);
             System.out.println("Load Properties " + strBuildProfile + ": Loaded Successfully.");
         } catch (IOException e) {
-            Assert.fail("Failed to load" + strBuildProfile);
+            System.out.println("Failed to load" + strBuildProfile);
         }
         return properties;
     }

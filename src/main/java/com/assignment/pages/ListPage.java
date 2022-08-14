@@ -24,7 +24,7 @@ public class ListPage extends BasePage {
     By termName = By.xpath("//input[@placeholder='Enter a term']");
     By addTermIcon = By.xpath("//pup-button[@class='add-button button focusable medium transparent']//button[@type='button']");
     By successToast = By.xpath("//div[@class='toast-content']");
-    By savedTermName = By.xpath("//pup-modal-input[@class='modal-input regular ng-star-inserted']//div[@class='inner-input']");
+    By savedTermName = By.xpath("//pup-table-cell//input[@type='text']");
 
     public void openList() throws InterruptedException {
         CommonItemsPage commonItemsPage = new CommonItemsPage(driver);
@@ -38,33 +38,32 @@ public class ListPage extends BasePage {
     public String getListUITitle() {
         CommonItemsPage commonItems = new CommonItemsPage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-        //commonItems.switchToFrame();
-        String title = commonItems.getUITitle();
-        //commonItems.switchToWindow();
-        return title;
+        return commonItems.getUITitle();
     }
 
     public void addList(String name) {
-        CommonItemsPage commonItems = new CommonItemsPage(driver);
-        //commonItems.switchToFrame();
         driver.findElement(addListButton).click();
-        //commonItems.switchToWindow();
         driver.findElement(standardInclusionExclusionOption).click();
         driver.findElement(continueButton).click();
         driver.findElement(listName).sendKeys(name);
         driver.findElement(addButton).click();
-        //commonItems.switchToFrame();
         wait.until(ExpectedConditions.presenceOfElementLocated(termName));
         driver.findElement(termName).sendKeys("Monday");
         driver.findElement(addTermIcon).click();
     }
 
-    public String getSavedTermName() {
+    public String getSavedTermName() throws InterruptedException {
+        Thread.sleep(10000);
+        driver.findElement(termName).click();
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(savedTermName));
         List<WebElement> terms = driver.findElements(savedTermName);
         System.out.println(terms.size());
         for (WebElement e : terms)
-            System.out.println(e.getText());
+            System.out.println("Text : " + e.getText());
+
+        String bodyText = driver.findElement(By.tagName("body")).getText();
+        System.out.println("We have monday? " + bodyText.contains("Monday"));
+
         return terms.get(terms.size() - 1).getText();
         //wait.until(ExpectedConditions.presenceOfElementLocated(savedTermName));
         //return driver.findElement(savedTermName).getText();

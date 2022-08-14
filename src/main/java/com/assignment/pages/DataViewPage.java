@@ -2,11 +2,6 @@ package com.assignment.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class DataViewPage extends BasePage {
     public DataViewPage(WebDriver driver) {
@@ -22,7 +17,6 @@ public class DataViewPage extends BasePage {
 
     By editFrame = By.xpath("//iframe[@name='editFrame']");
     By largeViewButton = By.xpath("//button[normalize-space()='Large View']");
-    //By blackListOption = By.cssSelector("body > div:nth-child(3) > div:nth-child(13) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(19) > div:nth-child(2)");
     By dropBox = By.xpath("//ul[@id='dataflow-ul-output']//li[@class='drop-area ui-sortable-handle'][normalize-space()='Drop Box Here']");
     By saveBlackListButton = By.xpath("//button[@class='btn btn-success btn-sm js-save-process']");
     By blackListOption = By.xpath("//li[normalize-space()='Blacklist']");
@@ -37,15 +31,20 @@ public class DataViewPage extends BasePage {
     By dayColumnValues = By.xpath("//tbody//td[4]");
     By tableRows = By.xpath("//tbody//tr");
 
-    public void openDataView() {
+    By blackListItem = By.xpath("//tr[@class='ng-scope blacklist']");
+
+    public String openDataView() {
         driver.switchTo().defaultContent();
         CommonItemsPage commonItemsPage = new CommonItemsPage(driver);
         commonItemsPage.hoverOnLogo();
         driver.findElement(dataViewLink).click();
+        String title = commonItemsPage.getUITitle();
         driver.switchTo().frame(driver.findElement(viewFrame));
+
+        return title;
     }
 
-    public void blacklistOperation(String listName) throws InterruptedException {
+    public int blacklistOperation(String listName) throws InterruptedException {
         driver.findElement(dropDownButton).click();
         driver.findElement(intermediateOption).click();
         driver.findElement(editButton).click();
@@ -67,9 +66,11 @@ public class DataViewPage extends BasePage {
         driver.switchTo().frame(driver.findElement(viewFrame));
 
         Thread.sleep(10000);
-        WebElement ele = driver.findElement(By.xpath("//tr[@class='ng-scope blacklist']"));
-        System.out.println("element color : " + ele.getCssValue("background-color"));
 
-        Thread.sleep(5000);
+        return driver.findElements(blackListItem).size();
+    }
+
+    public String getBlackListBackgroundColor() {
+        return driver.findElement(blackListItem).getCssValue("background-color");
     }
 }

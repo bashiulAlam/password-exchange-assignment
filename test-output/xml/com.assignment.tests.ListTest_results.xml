@@ -1,37 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Automation Test - chrome"
-           tests="5"
-           failures="0"
+           tests="6"
+           failures="1"
            errors="0"
            skipped="0"
-           time="65.312">
+           time="61.399">
     <properties></properties>
 
-
-
-            <testcase
-                name="Test_005_openDataViewUI"
-                time="31.600"
-                classname="com.assignment.tests.ListTest">
-            </testcase>
-            <testcase
-                name="Test_003_openListUI"
-                time="17.782"
-                classname="com.assignment.tests.ListTest">
-            </testcase>
             <testcase
                 name="Test_004_addNewList"
-                time="4.615"
+                time="14.137"
+                classname="com.assignment.tests.ListTest">
+
+            <failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;toast-content&apos;]&quot;}
+  (Session info: chrome=104.0.5112.81)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.3.0&apos;, revision: &apos;a4995e2c09*&apos;
+System info: host: &apos;LAPTOP-HMFUJK93&apos;, ip: &apos;192.168.31.70&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [435ea3e529b3925ef7b56619cb8520be, findElement {using=xpath, value=//div[@class=&apos;toast-content&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\SABAB\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55546}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55546/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 435ea3e529b3925ef7b56619cb8520be">
+                <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='toast-content']"}
+  (Session info: chrome=104.0.5112.81)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'LAPTOP-HMFUJK93', ip: '192.168.31.70', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [435ea3e529b3925ef7b56619cb8520be, findElement {using=xpath, value=//div[@class='toast-content']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\SABAB\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55546}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55546/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 435ea3e529b3925ef7b56619cb8520be
+                java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:387)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)com.assignment.pages.ListPage.isSuccessToastDisplayed(ListPage.java:73)com.assignment.tests.ListTest.Test_004_addNewList(ListTest.java:55)java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)java.base/java.lang.reflect.Method.invoke(Method.java:577)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </failure>
+    </testcase>
+
+
+            <testcase
+                name="Test_002_openDashboard"
+                time="6.147"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_006_blackListOperation"
+                time="17.811"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_005_openDataViewUI"
+                time="7.474"
                 classname="com.assignment.tests.ListTest">
             </testcase>
             <testcase
                 name="Test_001_signIn"
-                time="4.527"
+                time="5.293"
                 classname="com.assignment.tests.ListTest">
             </testcase>
             <testcase
-                name="Test_002_openDashboard"
-                time="6.788"
+                name="Test_003_openListUI"
+                time="10.537"
                 classname="com.assignment.tests.ListTest">
             </testcase>
 </testsuite>
