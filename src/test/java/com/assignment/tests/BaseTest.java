@@ -39,7 +39,7 @@ public class BaseTest {
 			options.setExperimentalOption("prefs", prefs);
 			options.addArguments("--disable-dev-shm-usage"); 
 			options.addArguments("--no-sandbox");
-			//options.addArguments("--headless");
+			options.addArguments("--headless");
 
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(options);

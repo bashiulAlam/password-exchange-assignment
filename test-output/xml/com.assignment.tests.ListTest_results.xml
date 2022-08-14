@@ -4,39 +4,39 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="76.380">
+           time="48.121">
     <properties></properties>
 
 
 
             <testcase
-                name="Test_002_openDashboard"
-                time="29.049"
+                name="Test_003_openListUI"
+                time="5.929"
                 classname="com.assignment.tests.ListTest">
             </testcase>
             <testcase
                 name="Test_006_blackListOperation"
-                time="19.752"
-                classname="com.assignment.tests.ListTest">
-            </testcase>
-            <testcase
-                name="Test_004_addNewList"
-                time="5.938"
-                classname="com.assignment.tests.ListTest">
-            </testcase>
-            <testcase
-                name="Test_003_openListUI"
-                time="5.582"
-                classname="com.assignment.tests.ListTest">
-            </testcase>
-            <testcase
-                name="Test_005_openDataViewUI"
-                time="7.120"
+                time="18.041"
                 classname="com.assignment.tests.ListTest">
             </testcase>
             <testcase
                 name="Test_001_signIn"
-                time="8.939"
+                time="5.326"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_004_addNewList"
+                time="4.890"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_002_openDashboard"
+                time="7.498"
+                classname="com.assignment.tests.ListTest">
+            </testcase>
+            <testcase
+                name="Test_005_openDataViewUI"
+                time="6.437"
                 classname="com.assignment.tests.ListTest">
             </testcase>
 </testsuite>
