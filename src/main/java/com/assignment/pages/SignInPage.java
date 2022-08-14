@@ -20,7 +20,6 @@ public class SignInPage extends BasePage {
 
     //dashboard navigation
     By channelLink = By.xpath("//span[@class='ng-binding']");
-    By dashboardLink = By.xpath("//nav[@class='sidebar']//li[2]//a[1]");
 
     public void executeSignIn(String mail, String pass) {
         CommonItemsPage commonItems = new CommonItemsPage(driver);
@@ -40,7 +39,6 @@ public class SignInPage extends BasePage {
     public void openDashboard() {
         driver.findElement(channelLink).click();
         driver.findElement(channelLink).click();
-//        driver.findElement(dashboardLink).click();
     }
 
     public String getDashboardTitle() {

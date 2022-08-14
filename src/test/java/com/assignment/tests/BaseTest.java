@@ -1,5 +1,6 @@
 package com.assignment.tests;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -48,10 +49,10 @@ public class BaseTest {
 		}
 
 		// Default value 0 Seconds implicit timeout
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
 		
 		// Default value 300 Seconds pageload timeout
-		driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(300000));
 
 		driver.get(this.url);
 

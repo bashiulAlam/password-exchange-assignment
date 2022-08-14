@@ -25,7 +25,7 @@ public class ListTest extends BaseTest {
         String userName = page.getInstance(SignInPage.class).getUserName();
         System.out.println("user name : " + userName);
         softAssert.assertEquals(userName, Constants.USER);
-        Utils.takeScreenShot(driver, userName);
+        Utils.takeScreenShot(driver, "Test_001_signIn");
     }
 
     @Test(priority = 0, dependsOnMethods = {"Test_001_signIn"})
@@ -33,7 +33,7 @@ public class ListTest extends BaseTest {
         page.getInstance(SignInPage.class).openDashboard();
         String title = page.getInstance(SignInPage.class).getDashboardTitle();
         System.out.println("dashboard title : " + title);
-        Utils.takeScreenShot(driver, title);
+        Utils.takeScreenShot(driver, "Test_002_openDashboard");
         softAssert.assertEquals(title, Constants.UITitles.DASHBOARD_TITLE);
     }
 
@@ -42,7 +42,7 @@ public class ListTest extends BaseTest {
         page.getInstance(ListPage.class).openList();
         String title = page.getInstance(ListPage.class).getListUITitle();
         System.out.println("list UI title : " + title);
-        Utils.takeScreenShot(driver, title);
+        Utils.takeScreenShot(driver, "Test_003_openListUI");
         softAssert.assertEquals(title, Constants.UITitles.LIST_UI_TITLE);
     }
 
@@ -51,7 +51,7 @@ public class ListTest extends BaseTest {
         Constants.LIST_NAME = Utils.generateListName();
         System.out.println("creating list with name : " + Constants.LIST_NAME);
         page.getInstance(ListPage.class).addList(Constants.LIST_NAME);
-        Utils.takeScreenShot(driver, Constants.LIST_NAME);
+        Utils.takeScreenShot(driver, "Test_004_addNewList");
         Assert.assertTrue(page.getInstance(ListPage.class).isSuccessToastDisplayed());
         if (page.getInstance(ListPage.class).isSuccessToastDisplayed()) {
             String successToastMessage = page.getInstance(ListPage.class).getSuccessToastMessage();
@@ -59,15 +59,16 @@ public class ListTest extends BaseTest {
 
             softAssert.assertEquals(successToastMessage, Constants.LIST_ADD_SUCCESS_MESSAGE);
 
-            /*String savedTermName = page.getInstance(ListPage.class).getSavedTermName();
-            System.out.println("saved term name : " + savedTermName);*/
+            String savedTermName = page.getInstance(ListPage.class).getSavedTermName();
+            System.out.println("saved term name : " + savedTermName);
+            softAssert.assertEquals(savedTermName, Constants.TERM);
         }
     }
 
     @Test(priority = 1)
     public void Test_005_openDataViewUI() throws IOException {
         String dataViewTitle = page.getInstance(DataViewPage.class).openDataView();
-        Utils.takeScreenShot(driver, dataViewTitle);
+        Utils.takeScreenShot(driver, "Test_005_openDataViewUI");
         System.out.println("Data View UI Title : " + dataViewTitle);
         softAssert.assertEquals(dataViewTitle, Constants.UITitles.DATA_VIEW_UI_TITLE);
     }
@@ -76,7 +77,7 @@ public class ListTest extends BaseTest {
     public void Test_006_blackListOperation() throws InterruptedException, IOException {
         int blackListItemCount = page.getInstance(DataViewPage.class).blacklistOperation(Constants.LIST_NAME);
         Assert.assertEquals(blackListItemCount, 1);
-        Utils.takeScreenShot(driver, "Blacklist");
+        Utils.takeScreenShot(driver, "Test_006_blackListOperation");
         if (blackListItemCount == 1) {
             String backGroundColor = page.getInstance(DataViewPage.class).getBlackListBackgroundColor();
             System.out.println("Blacklist item background color : " + backGroundColor);

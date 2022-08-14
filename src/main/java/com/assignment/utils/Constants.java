@@ -14,6 +14,7 @@ public class Constants {
         public static final String DATA_VIEW_UI_TITLE = "Data View";
     }
 
+    public static final String TERM = "Monday";
     public static final String LIST_ADD_SUCCESS_MESSAGE = "You successfully added the list item";
     public static final String BLACKLIST_BACKGROUND_COLOR = "rgba(254, 199, 195, 0.6)";
 }
