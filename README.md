@@ -11,6 +11,7 @@
 1. The project has been implemented following POM (Page Object Model) structure. The page objects are implemented inside the package **com.assignment.pages**.
 2. The test classes are implemented inside the package ***com.assignment.tests***.
 3. A configuration class is maintained to initialize the user controlled variables like user name, email and password.
+4. Project is also integrated with *CircleCI* pipeline, a successful run can be found [here](https://app.circleci.com/pipelines/github/bashiulAlam/test-automation-task/4/workflows/8fa32acf-6b65-400a-815f-61882385dab7/jobs/4).
 
 ## Prerequisites
 
