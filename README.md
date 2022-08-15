@@ -59,6 +59,7 @@ We are also capturing screenshots which are stored in *{project_root}/screenshot
 ## Future Improvements
 
 1. Currently we only have Chrome browser support, we can extend it to other browsers.
-2. Test cases have not been written in *BDD* format, we can add any *Gherkin* framework to achieve that.
-3. In the CI/CD pipeline added with *CircleCI* we do not have any artifacts defined yet which can be added.
-4. Logback support is not added yet.
+2. For a couple of operations we had to use *Thread.sleep()* as data load time is high. We can try to figure out a way around with *Explicit* or *Fluent* wait to use instead. 
+3. Test cases have not been written in *BDD* format, we can add any *Gherkin* framework to achieve that.
+4. In the CI/CD pipeline added with *CircleCI* we do not have any artifacts defined yet which can be added.
+5. Logback support is not added yet.
